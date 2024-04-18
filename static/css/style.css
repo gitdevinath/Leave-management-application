@@ -1,0 +1,29 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+body{
+    padding-top: 61px;
+    /*background-color:aquamarine;*/
+    /*background: rgb(191, 32, 32);*/
+    background-image: url('/zproj/static/asset/orangeHome.png');
+    background-size: cover;
+    background-position: center;
+    
+}
+
+
+
+hoverrr:hover {
+    background-color: lightgreen;
+}
+
+.home_nav{
+    background-color: red;
+    background: yellow;
+}
+
+
+
+
