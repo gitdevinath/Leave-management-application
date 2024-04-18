@@ -1,0 +1,10 @@
+{% include 'home.html' %}
+
+    {% block content %}
+        <nav class="nav flex-column">
+            <a class="nav-link active" aria-current="page" href="{% url 'add_leaveContent' %}">
+                <button type="button" class="btn btn-secondary">Apply for leave</button>
+            </a>
+        </nav>  
+        
+    {% endblock %}

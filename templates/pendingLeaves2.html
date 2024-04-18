@@ -1,0 +1,43 @@
+{% include 'home.html' %}
+
+    {% block content %}
+
+       <!-- {% for leave in leave_details %}            
+            <p>From Date: {{ leave.fromDate }}</p>
+            <p>To Date: {{ leave.toDate }}</p>
+            <p>Reason: {{ leave.reason }}</p>
+            <p>Comment: {{ leave.comment }}</p>
+            <b>Status: {{ leave.status }}
+            <br><br><br><br>
+
+
+        {% endfor %} -->
+
+        <div class="container">
+            <h3>Pending Leave Applications</h3>
+            <div class="row">
+                {% for leave in leave_details %}
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">From Date: {{ leave.fromDate }}</h5>
+                            <p class="card-text">To Date: {{ leave.toDate }}</p>
+                            <p class="card-text">Reason: {{ leave.reason }}</p>
+                            <p class="card-text">Comment: {{ leave.comment }}</p>
+                            <p class="card-text">Status: 
+                                {% if leave.status == 'accepted' %}
+                                    <span class="badge bg-success">{{ leave.status }}</span>
+                                {% elif leave.status == 'rejected' %}
+                                    <span class="badge bg-danger">{{ leave.status }}</span>
+                                {% else %}
+                                    <span class="badge bg-secondary">{{ leave.status }}</span>
+                                {% endif %}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    {% endblock %}

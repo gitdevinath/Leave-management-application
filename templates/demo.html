@@ -1,0 +1,27 @@
+{% include 'home.html' %}
+
+{% block content %}
+<form method="post" action="{% url 'loginView' %}">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label class="form-label">Login As:</label>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="user_type" id="superuser_radio" value="superuser" checked>
+            <label class="form-check-label" for="superuser_radio">Superuser</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="user_type" id="normal_user_radio" value="normal_user">
+            <label class="form-check-label" for="normal_user_radio">Normal User</label>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Username</label>
+        <input type="text" class="form-control" name="username" required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control" name="password" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+</form>
+{% endblock %}
