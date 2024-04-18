@@ -1,0 +1,7 @@
+{% include 'home.html' %}
+
+{% block content %}
+{% for x in person_detail %}
+            <a href="{% url 'leave_details' x.id %}"> ({{user_id.id}}) {{x.username}} </a><br>
+        {% endfor %}
+{% endblock %}

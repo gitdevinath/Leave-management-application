@@ -1,0 +1,43 @@
+{% include 'home.html' %}
+
+    {% block content %}
+   <!-- <h3>employees who have applied for leave recently</h3>
+        {% for i in lists %}
+        <div class="card mb-3" style="max-width: 100vw; ">
+            <div class="row g-0">
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <a href="{% url 'leave_lists' i.id %}"><h5 class="card-title"> Name of the applicant - <b> {{i.username}}</b></h5></a>
+                        <p class="card-text">Leave type <b> {{i.reason}} </b></p>
+                        <p class="card-text"><small class="text-body-secondary"> status <b> {{i.status}} </b></small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %} -->
+
+        <div class="container">
+            <h3>Employees who have applied for leave recently</h3>
+            {% for i in lists %}
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <a href="{% url 'leave_lists' i.id %}">
+                            <h5 class="card-title">Name of the applicant - <b>{{ i.username }}</b></h5>
+                        </a>
+                        <p class="card-text">Leave type: <b>{{ i.reason }}</b></p>
+                        <p class="card-text">Status: 
+                            {% if i.status == 'accepted' %}
+                                <span class="badge bg-success">{{ i.status }}</span>
+                            {% elif i.status == 'rejected' %}
+                                <span class="badge bg-danger">{{ i.status }}</span>
+                            {% else %}
+                                <span class="badge bg-secondary">{{ i.status }}</span>
+                            {% endif %}
+                        </p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endblock %}  
+
+    

@@ -1,0 +1,9 @@
+{% include 'home.html' %}
+
+    {% block content %}
+    <form action="{% url 'AddSuperUser' %}" method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button class="btn btn-dark btn-lg">Create User</button>
+    </form>
+    {% endblock %}
